@@ -13,10 +13,11 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">Sakthivel<span>.dev</span></a>
+            <a href="#" class="logo">Sakthivel<span>Pongiannan</span></a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="aws.html">Cloud Notes</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#certifications">Certifications</a></li>
@@ -175,56 +176,98 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects Section (password gated) -->
     <section id="projects" class="section bg-alt">
         <div class="container">
             <h2 class="section-title">Key Projects & Systems</h2>
-            <div class="projects-grid">
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <i class="fa-solid fa-microchip project-icon"></i>
-                        <h3>MCP AI Agent Infrastructure Engine</h3>
-                    </div>
-                    <p>Engineered custom Model Context Protocol (MCP) AI agents utilizing Python and Google ADK for automated Terraform code generation, decreasing multi-cloud provisioning effort by 60–70%.</p>
-                    <div class="tags">
-                        <span>Agentic AI</span>
-                        <span>MCP</span>
-                        <span>Terraform</span>
-                        <span>Google ADK</span>
-                        <span>Python</span>
-                    </div>
-                </div>
+            <!-- Lock prompt -->
+            <div id="projects-lock" class="about-card" style="max-width: 420px; margin: 0 auto; text-align: center;">
+                <i class="fa-solid fa-lock" style="font-size: 1.8rem; color: var(--accent-color); margin-bottom: 1rem;"></i>
+                <p style="margin-bottom: 1.2rem;">Project details are password protected. Enter the password to view them.</p>
+                <form id="projects-unlock-form">
+                    <input
+                        type="password"
+                        id="projects-password-input"
+                        placeholder="Password"
+                        autocomplete="off"
+                        style="width: 100%; padding: 0.8rem 1rem; border-radius: 6px; border: 1px solid var(--border-color); background-color: var(--bg-color); color: var(--text-color); font-size: 1rem; margin-bottom: 1rem;"
+                    >
+                    <button type="submit" class="btn btn-primary" style="width: 100%; border: none; cursor: pointer;">Unlock</button>
+                </form>
+                <p id="projects-lock-error" style="color: #f87171; font-size: 0.9rem; margin-top: 1rem; display: none;">
+                    Incorrect password. Try again.
+                </p>
+            </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <i class="fa-solid fa-cubes project-icon"></i>
-                        <h3>NIMBUS Cloud Intake Platform</h3>
-                    </div>
-                    <p>Designed and built an end-to-end cloud management platform deployed on GCP Cloud Run. Features automated IAM governance, self-service request workflows, and YAML factory deployments serving 250+ cloud projects.</p>
-                    <div class="tags">
-                        <span>Spring Boot</span>
-                        <span>Angular</span>
-                        <span>Cloud Run</span>
-                        <span>GCP</span>
-                        <span>AWS</span>
-                    </div>
-                </div>
+            <!-- Gated content -->
+            <div id="projects-content" style="display: none;">
+                <div class="projects-grid">
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <i class="fa-solid fa-network-wired project-icon"></i>
-                        <h3>Hybrid Multi-Cloud Foundation & Mesh</h3>
-                        <p>Architected shared VPC landing zones, OIDC short-lived keyless authentication pipelines, cross-account RAM sharing, and hybrid interconnects linking on-prem data centers to AWS and GCP.</p>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="fa-solid fa-microchip project-icon"></i>
+                            <h3>MCP AI Agent Infrastructure Engine</h3>
+                        </div>
+                        <p>Engineered custom Model Context Protocol (MCP) AI agents utilizing Python and Google ADK for automated Terraform code generation, decreasing multi-cloud provisioning effort by 60–70%.</p>
                         <div class="tags">
-                            <span>AWS RAM</span>
-                            <span>Direct Connect</span>
-                            <span>Shared VPC</span>
-                            <span>OIDC</span>
+                            <span>Agentic AI</span>
+                            <span>MCP</span>
+                            <span>Terraform</span>
+                            <span>Google ADK</span>
+                            <span>Python</span>
                         </div>
                     </div>
-                </div>
 
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="fa-solid fa-cubes project-icon"></i>
+                            <h3>NIMBUS Cloud Intake Platform</h3>
+                        </div>
+                        <p>Designed and built an end-to-end cloud management platform deployed on GCP Cloud Run. Features automated IAM governance, self-service request workflows, and YAML factory deployments serving 250+ cloud projects.</p>
+                        <div class="tags">
+                            <span>Spring Boot</span>
+                            <span>Angular</span>
+                            <span>Cloud Run</span>
+                            <span>GCP</span>
+                            <span>AWS</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="fa-solid fa-network-wired project-icon"></i>
+                            <h3>Hybrid Multi-Cloud Foundation & Mesh</h3>
+                            <p>Architected shared VPC landing zones, OIDC short-lived keyless authentication pipelines, cross-account RAM sharing, and hybrid interconnects linking on-prem data centers to AWS and GCP.</p>
+                            <div class="tags">
+                                <span>AWS RAM</span>
+                                <span>Direct Connect</span>
+                                <span>Shared VPC</span>
+                                <span>OIDC</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://github.com/mail2sakthi2003/AI_Agents" target="_blank" rel="noopener noreferrer" class="project-card" style="display: block; text-decoration: none; color: inherit;">
+                        <div class="project-header">
+                            <i class="fa-solid fa-comments project-icon"></i>
+                            <h3>Agentic Chat UI on Google ADK</h3>
+                        </div>
+                        <p>Built a production-shaped Angular chat interface wired to a custom Google ADK agent, using CopilotKit and the AG-UI protocol to stream responses from a FastAPI bridge into a live, tool-enabled conversational UI.</p>
+                        <div class="tags">
+                            <span>Angular</span>
+                            <span>Google ADK</span>
+                            <span>CopilotKit</span>
+                            <span>AG-UI Protocol</span>
+                            <span>FastAPI</span>
+                            <span>Gemini</span>
+                        </div>
+                    </a>
+
+                </div>
+                <button id="projects-lock-again-btn" class="btn btn-secondary" style="border: 1px solid var(--border-color); cursor: pointer; background: none; margin-top: 2rem;">
+                    <i class="fa-solid fa-lock"></i> Lock projects
+                </button>
             </div>
         </div>
     </section>
@@ -292,6 +335,55 @@
     <footer>
         <p>&copy; 2026 Sakthivel Pongiannan. Designed & Built for GitHub Pages.</p>
     </footer>
+
+    <script>
+        // SHA-256 hash of the shared site password — plaintext is never stored here.
+        // Shared with notes.html so unlocking either one unlocks both, for this browser.
+        const GATE_PASSWORD_HASH = '393a53b82702d50e5046990bca98f60f6153a4a9715c217d467826b340489800';
+        const GATE_STORAGE_KEY = 'siteUnlocked';
+
+        async function gateSha256Hex(text) {
+            const data = new TextEncoder().encode(text);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            return Array.from(new Uint8Array(hashBuffer))
+                .map(b => b.toString(16).padStart(2, '0'))
+                .join('');
+        }
+
+        function showProjects() {
+            document.getElementById('projects-lock').style.display = 'none';
+            document.getElementById('projects-content').style.display = 'block';
+        }
+
+        function showProjectsLock() {
+            document.getElementById('projects-content').style.display = 'none';
+            document.getElementById('projects-lock').style.display = 'block';
+            document.getElementById('projects-password-input').value = '';
+        }
+
+        if (localStorage.getItem(GATE_STORAGE_KEY) === 'true') {
+            showProjects();
+        }
+
+        document.getElementById('projects-unlock-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const entered = document.getElementById('projects-password-input').value;
+            const enteredHash = await gateSha256Hex(entered);
+
+            if (enteredHash === GATE_PASSWORD_HASH) {
+                localStorage.setItem(GATE_STORAGE_KEY, 'true');
+                document.getElementById('projects-lock-error').style.display = 'none';
+                showProjects();
+            } else {
+                document.getElementById('projects-lock-error').style.display = 'block';
+            }
+        });
+
+        document.getElementById('projects-lock-again-btn').addEventListener('click', () => {
+            localStorage.removeItem(GATE_STORAGE_KEY);
+            showProjectsLock();
+        });
+    </script>
 
 </body>
 </html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes | Sakthivel Pongiannan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Sakthivel<span>.dev</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="aws.html">Cloud Notes</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#certifications">Certifications</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Lock Screen -->
+    <header class="hero" id="lock-screen" style="min-height: 90vh;">
+        <div class="hero-content" style="max-width: 420px;">
+            <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+            <span class="badge"><i class="fa-solid fa-lock"></i>&nbsp; Private</span>
+            <h1 style="font-size: 2.2rem;">Day-to-Day <span class="highlight">Notes</span></h1>
+            <p class="subtext">This page holds informal working notes. Enter the password to continue.</p>
+
+            <form id="unlock-form" style="margin-top: 1.5rem;">
+                <input
+                    type="password"
+                    id="password-input"
+                    placeholder="Password"
+                    autocomplete="off"
+                    style="width: 100%; padding: 0.8rem 1rem; border-radius: 6px; border: 1px solid var(--border-color); background-color: var(--card-bg); color: var(--text-color); font-size: 1rem; margin-bottom: 1rem;"
+                >
+                <button type="submit" class="btn btn-primary" style="width: 100%; border: none; cursor: pointer;">Unlock</button>
+            </form>
+            <p id="lock-error" style="color: #f87171; font-size: 0.9rem; margin-top: 1rem; display: none;">
+                Incorrect password. Try again.
+            </p>
+        </div>
+    </header>
+
+    <!-- Notes Content (hidden until unlocked) -->
+    <div id="notes-content" style="display: none;">
+
+        <header class="hero" style="min-height: 40vh;">
+            <div class="hero-content">
+                <span class="badge"><i class="fa-solid fa-unlock"></i>&nbsp; Unlocked</span>
+                <h1>Day-to-Day <span class="highlight">Notes</span></h1>
+                <p class="subtext">Informal, evolving notes — decisions, gotchas, and things worth not forgetting across clouds, AI tooling, and career progress.</p>
+                <button id="lock-again-btn" class="btn btn-secondary" style="border: 1px solid var(--border-color); cursor: pointer; background: none;">
+                    <i class="fa-solid fa-lock"></i> Lock this page
+                </button>
+            </div>
+        </header>
+
+        <section class="section bg-alt">
+            <div class="container">
+                <h2 class="section-title">Notes Log</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2rem; max-width: 700px;">
+                    Add a new entry whenever something's worth remembering. For cloud-specific technical notes, use the dedicated
+                    <a href="aws.html" style="color: var(--accent-color);">AWS</a>,
+                    <a href="gcp.html" style="color: var(--accent-color);">GCP</a>, and
+                    <a href="azure.html" style="color: var(--accent-color);">Azure</a> pages instead — this page is for everything else.
+                </p>
+
+                <div class="log-entry">
+                    <span class="log-date">Template Entry</span>
+                    <h4>Short title of the note</h4>
+                    <p>What happened, what you decided, and the one detail future-you would forget. Duplicate this block for each new note.</p>
+                </div>
+
+                <div class="log-placeholder">
+                    Add your next note here.
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            &copy; 2026 Sakthivel Pongiannan. Designed &amp; Built for GitHub Pages.
+        </footer>
+    </div>
+
+    <script>
+        // SHA-256 hash of the page password — the plaintext password is never stored in this file.
+        const PASSWORD_HASH = '393a53b82702d50e5046990bca98f60f6153a4a9715c217d467826b340489800';
+        const STORAGE_KEY = 'siteUnlocked'; // shared with index.html's projects gate
+
+        async function sha256Hex(text) {
+            const data = new TextEncoder().encode(text);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            return Array.from(new Uint8Array(hashBuffer))
+                .map(b => b.toString(16).padStart(2, '0'))
+                .join('');
+        }
+
+        function showNotes() {
+            document.getElementById('lock-screen').style.display = 'none';
+            document.getElementById('notes-content').style.display = 'block';
+        }
+
+        function showLock() {
+            document.getElementById('notes-content').style.display = 'none';
+            document.getElementById('lock-screen').style.display = 'flex';
+            document.getElementById('password-input').value = '';
+        }
+
+        // Stay unlocked for this browser until the person explicitly locks it or clears site data.
+        if (localStorage.getItem(STORAGE_KEY) === 'true') {
+            showNotes();
+        }
+
+        document.getElementById('unlock-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const entered = document.getElementById('password-input').value;
+            const enteredHash = await sha256Hex(entered);
+
+            if (enteredHash === PASSWORD_HASH) {
+                localStorage.setItem(STORAGE_KEY, 'true');
+                document.getElementById('lock-error').style.display = 'none';
+                showNotes();
+            } else {
+                document.getElementById('lock-error').style.display = 'block';
+            }
+        });
+
+        document.getElementById('lock-again-btn').addEventListener('click', () => {
+            localStorage.removeItem(STORAGE_KEY);
+            showLock();
+        });
+    </script>
+
+</body>
+</html>

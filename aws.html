@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Deep-Dive | Sakthivel Pongiannan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Sakthivel<span>.dev</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#certifications">Certifications</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero" style="min-height: 70vh;">
+        <div class="hero-content">
+            <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+            <span class="badge"><i class="fa-brands fa-aws"></i>&nbsp; Cloud Deep-Dive</span>
+            <h1>Working With <span class="highlight">AWS</span></h1>
+            <p class="tagline">Cross-account architecture, identity federation & hybrid networking</p>
+            <p class="subtext">The specific AWS patterns, configurations, and day-to-day notes I want to remember and keep sharp — documented as I use them, not just when I first learn them.</p>
+
+            <nav class="cloud-switcher">
+                <a href="aws.html" class="cloud-tab active"><i class="fa-brands fa-aws"></i> AWS</a>
+                <a href="gcp.html" class="cloud-tab"><i class="fa-brands fa-google"></i> GCP</a>
+                <a href="azure.html" class="cloud-tab"><i class="fa-brands fa-microsoft"></i> Azure</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Core Patterns -->
+    <section class="section" id="patterns">
+        <div class="container">
+            <h2 class="section-title">Core Patterns I Work With</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fa-solid fa-share-nodes"></i>
+                    <h3>AWS RAM — Cross-Account Resource Sharing</h3>
+                    <p>Sharing subnets, Transit Gateway attachments, and other resources across accounts without duplicating infrastructure — central to keeping a multi-account landing zone lean.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-solid fa-key"></i>
+                    <h3>OIDC Federated Authentication</h3>
+                    <p>Keyless, short-lived credential exchange for CI/CD pipelines using OpenID Connect — no long-lived IAM access keys stored in pipeline secrets.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-solid fa-link"></i>
+                    <h3>IAM / STS Role Chaining</h3>
+                    <p>Cross-account role assumption patterns (AssumeRole chains) for least-privilege access across a multi-account organization.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-solid fa-network-wired"></i>
+                    <h3>Direct Connect — Hybrid Interconnects</h3>
+                    <p>Linking on-prem data centers to AWS VPCs via Direct Connect, paired with VPN failover for resilient hybrid connectivity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Day to Day Notes -->
+    <section class="section bg-alt" id="notes">
+        <div class="container">
+            <h2 class="section-title">Day-to-Day Notes & Runbooks</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem; max-width: 700px;">A running log of specific things worth remembering — configuration gotchas, decisions, and patterns from real work. Add an entry whenever something's worth not forgetting.</p>
+
+            <div class="log-entry">
+                <span class="log-date">Template Entry</span>
+                <h4>Short title of what you configured or fixed</h4>
+                <p>What the situation was, what you did, and the one detail future-you would forget. Duplicate this block for each new note.</p>
+            </div>
+
+            <div class="log-placeholder">
+                Add your next AWS note here — e.g. RAM share setup steps, an OIDC trust policy gotcha, or a role-chaining edge case.
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="section" id="aws-certs">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certs-grid">
+                <div class="cert-card">
+                    <i class="fa-solid fa-certificate cert-icon"></i>
+                    <h4>AWS Certified Cloud Practitioner <span class="status-pill status-done">Done</span></h4>
+                    <p>Amazon Web Services</p>
+                </div>
+                <div class="cert-card">
+                    <i class="fa-solid fa-certificate cert-icon"></i>
+                    <h4>AWS Certified Solutions Architect – Associate <span class="status-pill status-planned">Target</span></h4>
+                    <p>Amazon Web Services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Sakthivel Pongiannan. Designed &amp; Built for GitHub Pages.
+    </footer>
+
+</body>
+</html>
