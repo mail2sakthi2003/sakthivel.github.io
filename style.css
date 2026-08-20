@@ -422,20 +422,22 @@ footer {
 .status-inprogress { background: rgba(168, 85, 247, 0.15); color: var(--accent-color); }
 .status-planned { background: rgba(148, 163, 184, 0.15); color: var(--text-muted); }
 
-/* --- Hero Profile Photo (circular, gradient glow) --- */
+/* --- Hero Profile Photo (circular, professional frame) --- */
 .profile-pic-wrapper {
     position: relative;
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
     margin: 0 auto 1.8rem;
 }
 
 .profile-pic {
-    width: 100%;
-    height: 100%;
+    width: 140px;
+    height: 140px;
+    max-width: 140px;
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid var(--accent-color);
+    box-shadow: 0 4px 24px rgba(168, 85, 247, 0.35);
     position: relative;
     z-index: 1;
     display: block;
@@ -443,23 +445,16 @@ footer {
 
 .profile-pic-glow {
     position: absolute;
-    top: -8px;
-    left: -8px;
-    right: -8px;
-    bottom: -8px;
-    background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-secondary) 100%);
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
     border-radius: 50%;
-    filter: blur(18px);
-    opacity: 0.55;
+    border: 1px solid rgba(168, 85, 247, 0.3);
     z-index: 0;
-    animation: pulse-glow 3s ease-in-out infinite;
-}
-
-@keyframes pulse-glow {
-    0%, 100% { opacity: 0.35; transform: scale(1); }
-    50% { opacity: 0.65; transform: scale(1.06); }
 }
 
 @media (max-width: 768px) {
-    .profile-pic-wrapper { width: 120px; height: 120px; }
+    .profile-pic-wrapper { width: 110px; height: 110px; }
+    .profile-pic { width: 110px; height: 110px; max-width: 110px; }
 }
