@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCP Deep-Dive | Sakthivel Pongiannan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Sakthivel<span>.dev</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#certifications">Certifications</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero" style="min-height: 70vh;">
+        <div class="hero-content">
+            <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+            <span class="badge"><i class="fa-brands fa-google"></i>&nbsp; Cloud Deep-Dive</span>
+            <h1>Working With <span class="highlight">GCP</span></h1>
+            <p class="tagline">Shared VPC landing zones, platform engineering & Vertex AI</p>
+            <p class="subtext">The specific GCP patterns, configurations, and day-to-day notes I want to remember and keep sharp — documented as I use them, not just when I first learn them.</p>
+
+            <nav class="cloud-switcher">
+                <a href="aws.html" class="cloud-tab"><i class="fa-brands fa-aws"></i> AWS</a>
+                <a href="gcp.html" class="cloud-tab active"><i class="fa-brands fa-google"></i> GCP</a>
+                <a href="azure.html" class="cloud-tab"><i class="fa-brands fa-microsoft"></i> Azure</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Core Patterns -->
+    <section class="section" id="patterns">
+        <div class="container">
+            <h2 class="section-title">Core Patterns I Work With</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <h3>Shared VPC Landing Zones</h3>
+                    <p>Host/service project architecture for centralized network governance across 250+ cloud projects, with per-team subnet delegation.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-solid fa-cloud"></i>
+                    <h3>Cloud Run Deployments</h3>
+                    <p>Serverless container deployments for internal platforms like NIMBUS — fast iteration without managing cluster infrastructure.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-solid fa-tower-broadcast"></i>
+                    <h3>Cloud Interconnect</h3>
+                    <p>Dedicated and partner interconnects linking on-prem data centers to GCP, paired with Cloud VPN for redundancy.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-solid fa-robot"></i>
+                    <h3>Vertex AI & Agent Tooling</h3>
+                    <p>Vertex AI, Gemini CLI, and Google ADK for building and orchestrating custom AI agents on top of GCP infrastructure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Day to Day Notes -->
+    <section class="section bg-alt" id="notes">
+        <div class="container">
+            <h2 class="section-title">Day-to-Day Notes & Runbooks</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem; max-width: 700px;">A running log of specific things worth remembering — configuration gotchas, decisions, and patterns from real work. Add an entry whenever something's worth not forgetting.</p>
+
+            <div class="log-entry">
+                <span class="log-date">Template Entry</span>
+                <h4>Short title of what you configured or fixed</h4>
+                <p>What the situation was, what you did, and the one detail future-you would forget. Duplicate this block for each new note.</p>
+            </div>
+
+            <div class="log-placeholder">
+                Add your next GCP note here — e.g. a Shared VPC IAM binding gotcha, a Cloud Run deployment quirk, or a Vertex AI setup step.
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="section" id="gcp-certs">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certs-grid">
+                <div class="cert-card">
+                    <i class="fa-solid fa-certificate cert-icon"></i>
+                    <h4>Generative AI Leader <span class="status-pill status-done">Done</span></h4>
+                    <p>Google Cloud</p>
+                </div>
+                <div class="cert-card">
+                    <i class="fa-solid fa-certificate cert-icon"></i>
+                    <h4>Associate Cloud Engineer <span class="status-pill status-done">Done</span></h4>
+                    <p>Google Cloud</p>
+                </div>
+                <div class="cert-card">
+                    <i class="fa-solid fa-certificate cert-icon"></i>
+                    <h4>Cloud GenAI Engineer <span class="status-pill status-inprogress">In Progress</span></h4>
+                    <p>Google Cloud — RAG pipelines & agentic workflows</p>
+                </div>
+                <div class="cert-card">
+                    <i class="fa-solid fa-certificate cert-icon"></i>
+                    <h4>Professional Machine Learning Engineer <span class="status-pill status-planned">Stretch Goal</span></h4>
+                    <p>Google Cloud</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Sakthivel Pongiannan. Designed &amp; Built for GitHub Pages.
+    </footer>
+
+</body>
+</html>

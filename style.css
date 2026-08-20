@@ -1,13 +1,14 @@
 /* --- Color Palette & Variables --- */
 :root {
-    --bg-color: #0b1120;
-    --bg-alt: #1e293b;
-    --card-bg: #151e32;
-    --text-color: #f8fafc;
-    --text-muted: #94a3b8;
-    --accent-color: #38bdf8;
-    --accent-hover: #0284c7;
-    --border-color: #334155;
+    --bg-color: #0f0f0f;
+    --bg-alt: #1a1a1a;
+    --card-bg: #242424;
+    --text-color: #f5f5f5;
+    --text-muted: #a3a3a3;
+    --accent-color: #a855f7;
+    --accent-hover: #9333ea;
+    --accent-secondary: #c026d3;
+    --border-color: #383838;
     --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
@@ -30,7 +31,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(11, 17, 32, 0.9);
+    background-color: rgba(15, 15, 15, 0.85);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
     z-index: 1000;
@@ -104,19 +105,24 @@ body {
 }
 
 .badge {
-    background-color: rgba(56, 189, 248, 0.15);
+    background-color: rgba(168, 85, 247, 0.15);
     color: var(--accent-color);
     padding: 0.4rem 1rem;
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 600;
-    border: 1px solid rgba(56, 189, 248, 0.3);
+    border: 1px solid rgba(168, 85, 247, 0.3);
     display: inline-block;
     margin-bottom: 1.5rem;
 }
 
 .hero h1 { font-size: 3.2rem; margin-bottom: 1rem; }
-.highlight { color: var(--accent-color); }
+.highlight {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-secondary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
 .tagline { font-size: 1.5rem; color: var(--text-muted); margin-bottom: 1rem; font-weight: 500; }
 .subtext { max-width: 680px; margin: 0 auto 2rem; color: var(--text-muted); font-size: 1.05rem; }
 
@@ -134,7 +140,7 @@ body {
     transition: all 0.2s ease;
 }
 
-.btn-primary { background-color: var(--accent-color); color: #0b1120; }
+.btn-primary { background-color: var(--accent-color); color: #ffffff; }
 .btn-primary:hover { background-color: var(--accent-hover); }
 
 .btn-secondary {
@@ -250,7 +256,7 @@ body {
 
 .tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 .tags span {
-    background-color: rgba(56, 189, 248, 0.1);
+    background-color: rgba(168, 85, 247, 0.1);
     color: var(--accent-color);
     padding: 0.3rem 0.7rem;
     border-radius: 4px;
@@ -317,3 +323,101 @@ footer {
     .nav-links { display: none; }
     .education-box { flex-direction: column; text-align: center; }
 }
+
+/* --- Cloud Sub-Nav Switcher (added for cloud deep-dive pages) --- */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    transition: color 0.2s ease;
+}
+.back-link:hover { color: var(--accent-color); }
+
+.cloud-switcher {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.cloud-tab {
+    padding: 0.55rem 1.4rem;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+.cloud-tab:hover { border-color: var(--accent-color); color: var(--accent-color); }
+.cloud-tab.active { background-color: var(--accent-color); color: #ffffff; border-color: var(--accent-color); }
+
+/* --- Day-to-Day / Study Log entries --- */
+.log-entry {
+    border-left: 3px solid var(--border-color);
+    padding: 0.9rem 0 0.9rem 1.3rem;
+    margin-bottom: 1.2rem;
+    transition: border-color 0.2s ease;
+}
+.log-entry:hover { border-left-color: var(--accent-color); }
+.log-date {
+    font-size: 0.78rem;
+    color: var(--accent-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+.log-entry h4 { margin: 0.3rem 0 0.4rem; font-size: 1.05rem; }
+.log-entry p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0; }
+.log-placeholder {
+    border: 1px dashed var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* --- Roadmap steps (used on Azure learning-journey page) --- */
+.roadmap-step {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 1.8rem;
+    align-items: flex-start;
+}
+.roadmap-num {
+    flex-shrink: 0;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 50%;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-color);
+    font-weight: 700;
+}
+.roadmap-content h4 { margin-bottom: 0.3rem; }
+.roadmap-content p { color: var(--text-muted); font-size: 0.95rem; }
+
+.status-pill {
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-left: 0.6rem;
+}
+.status-done { background: rgba(74, 222, 128, 0.15); color: #4ade80; }
+.status-inprogress { background: rgba(168, 85, 247, 0.15); color: var(--accent-color); }
+.status-planned { background: rgba(148, 163, 184, 0.15); color: var(--text-muted); }
